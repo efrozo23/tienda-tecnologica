@@ -79,7 +79,7 @@ public class Vendedor {
 		return false;
 	}
 
-	public int validarVocales(String codigo) {
+	public static int validarVocales(String codigo) {
 		int vocales = 0;
 		
 		Pattern patternVow = Pattern.compile("[euioa]", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
@@ -90,7 +90,7 @@ public class Vendedor {
 		return vocales;
 	}
 	
-	public Date calcularFecha(double precio) {
+	public static Date calcularFecha(double precio) {
 		
 		Calendar fechaActual = Calendar.getInstance();
 		if(precio > PRECIO) {

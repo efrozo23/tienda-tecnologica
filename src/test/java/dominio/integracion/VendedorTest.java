@@ -2,6 +2,8 @@ package dominio.integracion;
 
 import static org.junit.Assert.fail;
 
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -82,4 +84,19 @@ public class VendedorTest {
 			Assert.assertEquals(Vendedor.EL_PRODUCTO_TIENE_GARANTIA, e.getMessage());
 		}
 	}
+	
+	
+	@Test
+	public void validarFechaTest() {
+		
+		Date fechaCalculada = Vendedor.calcularFecha(Vendedor.PRECIO);
+		Assert.assertNotNull(fechaCalculada);
+	}
+	
+	@Test
+	public void validarVocales() {
+		int cantVocales = Vendedor.validarVocales(COMPUTADOR_LENOVO);
+		Assert.assertEquals(7, cantVocales);
+	}
 }
+
